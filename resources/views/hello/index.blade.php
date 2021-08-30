@@ -14,7 +14,6 @@
     <form method="post" action="/hello">
         <table>
             @csrf
-            {{-- hasはエラーが発生しているかチェックするメソッド --}}
             @error('name'))
             <tr>
                 <th>ERROR</th>

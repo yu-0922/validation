@@ -21,3 +21,13 @@ Route::get('/', function () {
 
 Route::get('hello', 'HelloController@index');
 Route::post('hello', 'HelloController@store');
+
+Route::get('data', 'DatabaseController@index');
+
+Route::get('data/add', 'DatabaseController@add');
+Route::post('data/add', 'DatabaseController@create');
+Route::get('data/show', 'DatabaseController@show');
+Route::get('data/edit', 'DatabaseController@edit');
+Route::post('data/edit', 'DatabaseController@update');
+Route::get('data/delete', 'DatabaseController@delete');
+Route::post('data/delete', 'DatabaseController@remove');
