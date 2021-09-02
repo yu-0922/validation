@@ -31,3 +31,13 @@ Route::get('data/edit', 'DatabaseController@edit');
 Route::post('data/edit', 'DatabaseController@update');
 Route::get('data/delete', 'DatabaseController@delete');
 Route::post('data/delete', 'DatabaseController@remove');
+
+Route::get('person', 'PersonController@index');
+Route::get('person/find', 'PersonController@find');
+Route::post('person/find', 'PersonController@search');
+Route::get('person/add', 'PersonController@add');
+Route::post('person/add', 'PersonController@create');
+Route::get('person/edit', 'PersonController@edit');
+Route::post('person/edit', 'PersonController@update');
+Route::get('person/delete', 'PersonController@delete');
+Route::post('person/delete', 'PersonController@remove');

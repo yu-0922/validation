@@ -13,6 +13,14 @@
         border-bottom:solid 1px #ccc; color:#ccc; }
     th {background-color:#999; color:fff; padding:5px 10px; }
     td {border: solid 1px #aaa; color:#999; padding:5px 10px; }
+    .pagination li{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    border: 1px solid #FF9900;
+    }
     </style>
 </head>
 <body>
