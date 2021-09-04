@@ -23,4 +23,9 @@ class Person extends Model
     }
 
     public $timestamps = false;
+
+    public function boards()
+    {
+        return $this->hasMany('App\Models\Board');
+    }
 }
