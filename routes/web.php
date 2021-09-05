@@ -19,11 +19,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('hello', 'HelloController@index');
+Route::get('hello', 'HelloController@index')->middleware('auth');
 Route::post('hello', 'HelloController@store');
 Route::get('hello/rest', 'HelloController@rest');
 Route::get('hello/session', 'HelloController@ses_get');
 Route::post('hello/session', 'HelloController@ses_post');
+Route::get('hello/auth', 'HelloController@getAuth');
+Route::post('hello/auth', 'HelloController@postAuth');
 
 
 Route::get('data', 'DatabaseController@index');
@@ -51,3 +53,7 @@ Route::get('board/add', 'BoardController@add');
 Route::post('board/add', 'BoardController@create');
 
 Route::resource('rest', 'RestappController');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
