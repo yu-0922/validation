@@ -20,7 +20,7 @@ class UserFactory extends Factory
      *
      * @return array
      */
-    public function definition()
+    public function definition() //モデルを生成する処理を設定する
     {
         return [
             'name' => $this->faker->name(),
