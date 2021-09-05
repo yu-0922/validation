@@ -6,15 +6,21 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\HelloRequest;
 use Validator;
+use App\Models\Person;
 
 class HelloController extends Controller
 {
-    public function index(Request $request) {
-        return view('hello.index', ['msg'=>'フォームを入力ください。']);
+    public function index(Request $request)
+    {
+        $sort = $request->sort;
+        $items = Person::orderBy($sort, 'asc')->paginate(5);
+        $param = ['items'=> $items, 'sort'=>$sort];
+        return view('hello.index', $param);
     }
 
     //ここでバリデーションの処理を行う
-    public function store(HelloRequest $request) {
+    public function store(HelloRequest $request)
+    {
         return view('hello.index', ['msg'=>'正しく入力されました。']);
     }
 
